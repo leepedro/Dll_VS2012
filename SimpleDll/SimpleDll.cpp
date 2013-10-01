@@ -37,7 +37,7 @@ double GlobalDivide(double a, double b)
 
 namespace NameSpaceA
 {
-	int nonMemberReturnZero(void)
+	int NonMemberReturnZero(void)
 	{
 		return 0;
 	}
