@@ -2,6 +2,7 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <limits>
 
 int GlobalReturnZero(void)
 {
@@ -31,7 +32,8 @@ double GlobalMultiply(double a, double b)
 double GlobalDivide(double a, double b)
 {
 	if (b == 0.0)
-		throw std::invalid_argument("Second argument must NOT be zero.");
+		//throw std::invalid_argument("Second argument must NOT be zero.");
+		return std::numeric_limits<double>::max();
 	return a / b;
 }
 
@@ -65,7 +67,8 @@ namespace NameSpaceA
 	double NonMemberDivide(double a, double b)
 	{
 		if (b == 0.0)
-			throw std::invalid_argument("Second argument must NOT be zero.");
+			return std::numeric_limits<double>::max();
+			//throw std::invalid_argument("Second argument must NOT be zero.");
 		return a / b;
 	}
 
